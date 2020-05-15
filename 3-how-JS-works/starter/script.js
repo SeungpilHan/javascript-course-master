@@ -1,6 +1,7 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
 
+/*
 // functions
 calculateAge(1993);
 
@@ -22,7 +23,7 @@ function foo() {
 }
 foo();
 console.log(age);
-
+*/
 
 
 
@@ -81,9 +82,24 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+var john = {
+    name: 'john',
+    yearOfBirth: 1990,
+    calculateAge: function() {
+        console.log(this);
+        console.log(2016 - this.yearOfBirth);
+    }
+}
 
+john.calculateAge();
 
+var mike = {
+    name: 'mike',
+    yearOfBirth: 1960
+};
 
+mike.calculateAge = john.calculateAge;
+mike.calculateAge();
 
 
 
